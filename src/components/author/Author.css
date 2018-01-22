@@ -1,0 +1,11 @@
+.author{
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+.author img{
+    width: 150px;
+    height: 150px;
+    margin:auto;
+    border-radius: 50%;
+}
+.author p{margin-bottom: 0}
