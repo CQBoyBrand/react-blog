@@ -17,6 +17,7 @@ import RightSide from '../components/rightSide/RightSide'
 import Detail from "../containers/Detail";
 import Tags from "../containers/TagArtList";
 import Archive from "../containers/ArchiveArtList";
+import QueueAnim from 'rc-queue-anim';
 
 @withRouter
 class Main extends Component {
@@ -31,8 +32,14 @@ class Main extends Component {
         return (
             <div>
                 <Layout>
-                    <NavBar/>
-                    <div style={{marginTop: 64, padding: '15px 20px 0'}}>
+                    <QueueAnim
+                        style={{overflow:"hidden"}}
+                        animConfig={[
+                            { opacity: [1, 0], translateY: [0, 1500] },
+                            { opacity: [1, 0], translateY: [0, -1500] }
+                        ]}>
+                    <NavBar key="navbar"/>
+                    <div key="content" style={{marginTop: 64, padding: '15px 20px 0'}}>
                         <Crumb />
                         <Row gutter={16}>
                             <Col md={18}>
@@ -51,8 +58,9 @@ class Main extends Component {
                             </Col>
                         </Row>
                     </div>
-                    <Bottom/>
-                    <BackTop/>
+                    <Bottom key="Bottom"/>
+                    <BackTop BackTop/>
+                    </QueueAnim>
                 </Layout>
 
             </div>

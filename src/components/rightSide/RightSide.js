@@ -16,8 +16,8 @@ class RightSide extends Component {
                 <QueueAnim
                     style={{overflow:"hidden"}}
                     animConfig={[
-                        { opacity: [1, 0], translateX: [0, 500] },
-                        { opacity: [1, 0], translateX: [0, -500] }
+                        { opacity: [1, 0], translateY: [0, 1500] },
+                        { opacity: [1, 0], translateY: [0, -1500] }
                     ]}>
                     <Author key="Author"/>
                     <HotArticle key="HotArticle"/>
