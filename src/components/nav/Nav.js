@@ -16,7 +16,6 @@ class Nav extends Component {
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick(e) {
-        console.log('click ', e);
         this.setState({
             current: e.key,
         });

@@ -4,6 +4,7 @@
 import {combineReducers} from 'redux'
 import {articleList} from './ArticleList'
 import {tagList} from './Tags'
+import {linkList} from './LinkList'
 import {HotArtList} from './HotArticle'
 import {userinfo} from './UserInfo'
 import {artDetail} from './ArtDetail'
@@ -19,7 +20,8 @@ const reducer = combineReducers({
     artDetail,
     tagArtList,
     artArchive,
-    artListByDate
+    artListByDate,
+    linkList
 })
 
 export default reducer

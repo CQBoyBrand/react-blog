@@ -27,7 +27,6 @@ class ArtDetail extends Component {
     componentWillReceiveProps(nextProps){
         let currentId = this.props.match.params.id;
         let nextPropsId = nextProps.match.params.id;
-        console.log(this.props)
         if (currentId != nextPropsId) {
             this.setState({
                 show:!this.state.show
@@ -35,11 +34,7 @@ class ArtDetail extends Component {
             this.props.getDetails({"artId": nextPropsId})
         }
     }
-    componentWillUnmount(){
-
-    }
     render(){
-        //console.log("Show="+this.state.show)
         return (
             <div>
                 <Details data={this.props.artDetail} />

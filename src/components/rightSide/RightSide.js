@@ -6,7 +6,7 @@ import Author from '../author/Author'
 import HotArticle from "../../containers/HotArticle"
 import Tags from "../../containers/Tags"
 import Archive from '../../containers/Archive'
-import Link from "../link/Link"
+import Link from "../../containers/LinkList"
 import QueueAnim from 'rc-queue-anim';
 
 class RightSide extends Component {

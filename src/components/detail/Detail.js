@@ -22,7 +22,7 @@ class Detail extends Component {
     }
     render() {
         const datas = this.props.data;
-        let contentBody = (<div key="contentBody" style={{background: '#f9f9f9', padding: 20, boxShadow: '1px 1px 5px #aaa'}}>
+        let contentBody = (<div key="contentBody" style={{background: '#f9f9f9', padding: 20, boxShadow: '1px 1px 5px #aaa',marginBottom:'10px'}}>
             <h3 className="cq-art-title">{datas.artTitle}</h3>
             <div className="cq-art-info">
                 <span>发布时间：<i>{datas.artCdate}</i></span><span>阅读：<i>{datas.readNum}</i></span><span>评论：<i>0</i></span>
