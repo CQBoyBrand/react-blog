@@ -5,6 +5,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {Pagination} from 'antd'
 import './ArticleItem.css'
+import QueueAnim from 'rc-queue-anim';
 
 class ArticleItem extends Component {
     constructor() {
@@ -21,6 +22,12 @@ class ArticleItem extends Component {
         const pageTotal = this.props.total;
         return (
             <div>
+                <QueueAnim
+                    style={{overflow:"hidden"}}
+                    animConfig={[
+                        { opacity: [1, 0], translateY: [0, 500] },
+                        { opacity: [1, 0], translateY: [0, -500] }
+                    ]}>
                 {items.map((item, key) => (
                     <div key={key} className="article-body">
                         <Link to={`/detail/${item.artId}`}><h4>{item.artTitle}</h4></Link>
@@ -41,16 +48,16 @@ class ArticleItem extends Component {
                 </span>
                     </div>
                 ))}
-                {(pageTotal > 10) ? <Pagination showQuickJumper
+                {(pageTotal > 10) ? <Pagination key="page" showQuickJumper
                                                 defaultCurrent={1}
                                                 total={pageTotal}
-                                                onChange={this.handlerClickPage}/> : <p style={{
+                                                onChange={this.handlerClickPage}/> : <p key="nothing" style={{
                     textAlign: 'center',
                     background: '#f9f9f9',
                     boxShadow: '1px 1px 5px #aaa',
                     padding: '5px 0'
                 }}>暂无更多内容</p>}
-
+                </QueueAnim>
             </div>
         )
     }

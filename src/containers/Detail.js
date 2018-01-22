@@ -17,7 +17,8 @@ class ArtDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            artId: props.match.params.id
+            artId: props.match.params.id,
+            show:false
         }
     }
     componentDidMount(){
@@ -26,11 +27,19 @@ class ArtDetail extends Component {
     componentWillReceiveProps(nextProps){
         let currentId = this.props.match.params.id;
         let nextPropsId = nextProps.match.params.id;
+        console.log(this.props)
         if (currentId != nextPropsId) {
+            this.setState({
+                show:!this.state.show
+            })
             this.props.getDetails({"artId": nextPropsId})
         }
     }
+    componentWillUnmount(){
+
+    }
     render(){
+        //console.log("Show="+this.state.show)
         return (
             <div>
                 <Details data={this.props.artDetail} />
