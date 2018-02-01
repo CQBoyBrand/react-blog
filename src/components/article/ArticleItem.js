@@ -38,7 +38,7 @@ class ArticleItem extends Component {
                             &nbsp;&nbsp;&nbsp;
                             <span>浏览: {item.readNum}</span>
                             &nbsp;&nbsp;&nbsp;
-                            <span>评论: 0</span>
+                            <span>评论: {item.commentNum}</span>
                         </p>
                         <div className="article-abstract">
                             {item.artAbstract} ...

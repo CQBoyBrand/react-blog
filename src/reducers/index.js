@@ -11,6 +11,7 @@ import {artDetail} from './ArtDetail'
 import {tagArtList} from './TagArtList'
 import {artArchive} from './Archive'
 import {artListByDate} from './ArchiveArtList'
+import {commentsData} from './Comments'
 
 const reducer = combineReducers({
     articleList,
@@ -21,7 +22,8 @@ const reducer = combineReducers({
     tagArtList,
     artArchive,
     artListByDate,
-    linkList
+    linkList,
+    commentsData
 })
 
 export default reducer

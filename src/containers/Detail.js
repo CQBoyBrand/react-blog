@@ -37,7 +37,7 @@ class ArtDetail extends Component {
     render(){
         return (
             <div>
-                <Details data={this.props.artDetail} />
+                <Details comments={this.props.artDetail.comment} data={this.props.artDetail} />
             </div>
         )
     }

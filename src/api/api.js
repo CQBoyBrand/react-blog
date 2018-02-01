@@ -13,6 +13,8 @@ export const getArticleDate = BASE_UEL+'/getArticleDate'//获取日期列表
 export const getArticleListByDate = BASE_UEL+'/getArticleListByDate'//根据日期获取文章列表
 export const getWebLink = BASE_UEL+'/getWebLink'//获取友情
 
+export const addComment = BASE_UEL+'/addComment'//新增评论
+
 
 
 

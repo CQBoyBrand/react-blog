@@ -13,7 +13,7 @@ class Author extends Component{
                     <img src={img} alt="重庆崽儿Brand"/>
                 </div>
                 <p style={{textAlign:'center',fontWeight:'bold',padding:'8px 0',fontSize:'20px'}}>重庆崽儿Brand</p>
-                <p style={{textAlign:'center'}}>中度强迫症患者，美剧爱好者，前端搬砖工</p>
+                <p style={{textAlign:'center'}}>中度强迫症患者，美剧爱好者，前端代码搬运工</p>
             </div>
         )
     }

@@ -22,7 +22,6 @@ import QueueAnim from 'rc-queue-anim';
 @withRouter
 class Main extends Component {
     componentWillReceiveProps(nextProps){
-
         //当路由切换时回到顶部
         if(this.props.location !== nextProps.location){
             window.scrollTo(0,0)
@@ -59,7 +58,7 @@ class Main extends Component {
                         </Row>
                     </div>
                     <Bottom key="Bottom"/>
-                    <BackTop BackTop/>
+                    <BackTop/>
                     </QueueAnim>
                 </Layout>
 
