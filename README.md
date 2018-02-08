@@ -1,6 +1,16 @@
 # react-blog
 React+Redux+React-router4+axios+antd demo
 
+### 1.项目依赖安装
+```javascript
+ cnpm install
+```
+### 2.项目启动：
+```javascript
+       cnpm start
+````
+### 3.浏览器访问：http://localhost:4001
+
 # 之前只能在chrome浏览器运行，在其他浏览器报错的问题已解决
 在index.js文件中代码有问题，下面是问题代码：
 ```javascript
