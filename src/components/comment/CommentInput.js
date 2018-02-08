@@ -19,14 +19,34 @@ class CommentForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            replyStatus: ""
+            count: 20,
+            isClickable: true
         }
     }
-
+    timeDown(){
+        if(this.state.isClickable){
+            this.timer = setInterval(function () {
+                var count = this.state.count;
+                this.state.isClickable = false;
+                count -= 1;
+                if (count < 1) {
+                    this.setState({
+                        isClickable: true
+                    });
+                    count = 20;
+                    clearInterval(this.timer);
+                }
+                this.setState({
+                    count: count
+                });
+            }.bind(this), 1000);
+        }
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
+                this.timeDown()
                 localStorage.setItem("cq-nickname", values.userName)
                 localStorage.setItem("cq-email", values.userEmail)
                 localStorage.setItem("cq-website", values.userWebsite)
@@ -127,10 +147,10 @@ class CommentForm extends React.Component {
                     <Col md={8}>
                         <FormItem>
                             {getFieldDecorator('userEmail', {
-                                rules: [{type: 'email', message: '请输入正确的邮箱!'}],
+                                rules: [{required: true,type: 'email', message: '请输入正确的邮箱!'}],
                                 initialValue: userEmail
                             })(
-                                <Input addonBefore="你的邮箱" placeholder="怎样才能勾搭你？"/>
+                                <Input addonBefore="你的邮箱*" placeholder="怎样才能勾搭你？"/>
                             )}
                         </FormItem>
                     </Col>
@@ -157,8 +177,8 @@ class CommentForm extends React.Component {
                     )}
                 </FormItem>
                 <FormItem>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Submit
+                    <Button disabled={!this.state.isClickable} type="primary" htmlType="submit" className="login-form-button">
+                        {this.state.isClickable ? "Submit" : `请${this.state.count}秒后再评论`}
                     </Button>
                 </FormItem>
             </Form>
@@ -172,7 +192,10 @@ const CommentInput = Form.create({
             message.success("评论成功！");
             props.resetCommintStatus()
         }
-        if (props.replyStatus.code != "4" && props.replyStatus.code != null) {
+        if(props.replyStatus.code == "439"){
+            message.success("不要再戳啦，休息20秒再战可好");
+        }
+        if (props.replyStatus.code != "4" && props.replyStatus.code != null && props.replyStatus.code != "439") {
             message.error("操作失败！")
         }
     }

@@ -71,6 +71,7 @@ export function initComment() {
 export function addCommentFn(data) {
     return dispatch => {
         axios.post(addComment, data).then((res) => {
+            console.log("res=",res)
             if (res.status === 200) {
                 dispatch(addCommentSuccess({data: data, status: res.data}))
             } else {
