@@ -1,0 +1,88 @@
+.header-css {
+    background: #1c2b36;
+    color: #fff;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+.header-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #1c2b36;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.header-container>div{
+    float: left;
+    line-height: 50px;
+}
+
+.logo-css {
+    height: 50px;
+    font-family: Fredericka, Helvetica, Hiragino Sans GB, Arial, Microsoft YaHei, sans-serif;
+}
+.logo-css a{
+    color: #fff;
+    font-size: 24px;
+}
+.nav-top{
+    margin: 0;
+    font-size: 18px;
+}
+.nav-top a{color: #fff;}
+.nav-top li {
+    float: left;
+    padding: 0 20px;
+}
+.tab-icon{
+    display: none;
+}
+#menu-toggle {
+    display: none; /* hide the checkbox */
+}
+@media screen and (max-width: 768px){
+    .logo-css a{
+        font-size: 20px;
+    }
+    .nav-top{
+        font-size: 14px;
+    }
+    .tab-icon{
+        display: block;
+        position: absolute;
+        top: -50px;
+        right: 21px;
+        font-size: 30px;
+    }
+    .nav-box{
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: inherit;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    label {
+        cursor: pointer;
+    }
+    #menu-toggle:checked + .nav-top {
+        display: block;
+    }
+    .nav-top{
+        display: none;
+    }
+    .nav-top li {
+        float: none;
+        padding: 0;
+        color: #fff;
+        border-top: 1px solid #eee;
+        box-sizing: border-box;
+        line-height: 40px;
+    }
+    .nav-top li a{
+        display: inline-block;
+        width: 100%;
+        padding: 0 20px;
+    }
+}

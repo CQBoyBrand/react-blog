@@ -1,25 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Message} from 'antd';
 import {BrowserRouter} from 'react-router-dom'
-import {createStore, applyMiddleware,compose} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
-import './index.css'
 
-import Main from './containers/Main'
-import reducer from './reducers/index'
-import './config/axiosConfig'
+import './styles/common.css';
+import App from './App';
+import reducer from "./Reducer"
 
 const store = createStore(reducer, compose(
     applyMiddleware(thunk),
     window.devToolsExtension ? window.devToolsExtension() : f => f
 ))
-
+Message.config({
+    top: 100
+})
 ReactDOM.render(
-    (<Provider store={store}>
+    <Provider store={store}>
         <BrowserRouter>
-            <Main/>
+            <App/>
         </BrowserRouter>
-    </Provider>),
+    </Provider>,
     document.getElementById('root')
 );

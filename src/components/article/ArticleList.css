@@ -1,0 +1,49 @@
+.article-item-box {
+    box-shadow: 1px 1px 5px #aaa;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.article-body {
+    padding: 16px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.article-body > a {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.article-title {
+    display: inline-block;
+}
+
+.article-title:hover h4 {
+    color: #1c2b36;
+    font-weight: bold;
+
+}
+
+.article-info {
+    font-size: 13px;
+    color: #aaa
+}
+
+@media screen and (max-width: 768px) {
+    .article-info {
+        font-size: 12px;
+    }
+
+    .ant-pagination {
+        font-size: 12px;
+    }
+
+    .ant-pagination-item {
+        margin-right: 0px;
+    }
+
+    .ant-pagination-prev, .ant-pagination-jump-prev, .ant-pagination-jump-next {
+        margin: 0
+    }
+}

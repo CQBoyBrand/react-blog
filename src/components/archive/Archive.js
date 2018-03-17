@@ -1,26 +1,27 @@
 /**
- * Created By brand On 2018/1/21
+ * Created By brand On 2018/3/10
  */
-import React,{Component} from 'react'
-import {Tag} from 'antd'
-import {Link} from 'react-router-dom'
+import React,{Component} from "react"
+import {Link} from "react-router-dom"
+import { Row, Col,Icon } from 'antd'
+import "./Archive.css"
 
-class Archive extends Component{
+
+class Archive extends Component {
     render(){
-        let dateList = this.props.data || []
+        const  artArchive = this.props.artArchive || []
         return (
             <div className="side-wrap">
-                <h4>归档</h4>
-                <div className="side-body tags">
+                <h4>文章归档</h4>
+                <Row className="archive-css">
                     {
-                        dateList.map(
+                        artArchive.map(
                             (item,key)=>(
-                                <Tag key={key}><Link to={`/archive/${item.Archive}`}>{item.Archive}({item.Num})</Link></Tag>
+                                <Col key={key} md={12}><Link  to={`/archive/${item.artCdate}`}>{item.Archive} ({item.Num}篇)</Link></Col>
                             )
                         )
                     }
-
-                </div>
+                </Row>
             </div>
         )
     }

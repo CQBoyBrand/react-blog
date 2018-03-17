@@ -1,17 +1,20 @@
 /**
- * Created By brand On 2018/1/17
+ * Created By brand On 2018/3/10
  */
-import React,{Component} from 'react'
+import React,{Component} from "react"
 
-class Bottom extends Component {
+import "./Footer.css"
+
+class Footer extends Component {
+
     render(){
         return (
-            <div style={{ textAlign: 'center',padding:'20px 0'}}>
-                <i>Designed By 重庆崽儿Brand</i>
+            <div className="footer-css">
+                <i className="designed">Designed By 重庆崽儿Brand</i>
                 <div><a href="http://www.miitbeian.gov.cn/">渝ICP备17014610号</a></div>
             </div>
         )
     }
 }
 
-export default Bottom
+export default Footer

@@ -30,22 +30,22 @@ class Comment extends Component {
     }
 
     render() {
-        let commentList = this.props.data || [];
+        let commentLists = this.props.data || [];
         //列表
         let allComment = (<div>
-            <h4 style={{fontWeight: 'bold'}}>共有{commentList.length}条评论</h4>
+            <h4 style={{fontWeight: 'bold'}}>共有{commentLists.length}条评论</h4>
             <div className="List-wrap">
-                {commentList.map(
+                {commentLists.map(
                     (item, key) => (
                         <div key={key}>
                             <div className="commitor">{item.userName}</div>
                             <div className="commit-time">{item.commentTime}</div>
-                            {commentList.map(
+                            {commentLists.map(
                                 (item2, key2) => (
                                     <div key={key2}>
                                         {
-                                            (item.parentCommentId != "") ? (
-                                                (item2.commentId == item.parentCommentId) ? ( <div className="reply-to">
+                                            (item.parentCommentId !== "") ? (
+                                                (item2.commentId === item.parentCommentId) ? ( <div className="reply-to">
                                                     <div className="reply-to-sb">回复：{item2.userName}</div>
                                                     <div className="reply-to-time">{item2.commentTime}</div>
                                                     <div className="reply-to-content">{item2.Content}</div>
@@ -67,7 +67,7 @@ class Comment extends Component {
         </div>)
         return (
             <div className="comment-container">
-                {(commentList.length > 0) ? allComment : null}
+                {(commentLists.length > 0) ? allComment : null}
                 <div>
                     <h4 style={{fontWeight: 'bold'}}>评论</h4>
                     <div style={{textIndent: "3em", fontSize: "12px", color: '#aaa'}}>

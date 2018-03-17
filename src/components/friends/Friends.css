@@ -1,0 +1,56 @@
+.friends-link-css{
+    box-shadow: 1px 1px 5px #aaa;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.ant-card-body{
+    background-color: #f9f9f9;
+}
+.style-friend-link{
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.attentions{
+    font-weight: bold;
+    color: red;
+}
+.friend-links{
+    margin-top: 20px;
+    text-align: center;
+}
+.friend-links li{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.ant-card-cover{
+    height: 84px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ant-card-meta-description{
+    height: 36px;
+}
+.ant-card-meta-title{
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ant-card-meta-title{font-size: 14px}
+.ant-card-meta-description{font-size: 12px}
+@media screen and (max-width: 768px) {
+    .friend-links li{
+        width: 25%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .friend-links li{
+        width: 50%;
+    }
+}

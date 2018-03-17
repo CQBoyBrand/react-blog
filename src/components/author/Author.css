@@ -1,11 +1,13 @@
 .author{
     padding: 10px;
-    background-color: #f9f9f9;
+    box-sizing: border-box;
 }
 .author img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     margin:auto;
     border-radius: 50%;
 }
 .author p{margin-bottom: 0}
+.other-website{text-align: center;color: #0e77ca;}
+.other-website a{padding: 0 8px;font-size: 24px;}

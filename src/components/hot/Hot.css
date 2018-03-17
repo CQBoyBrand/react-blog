@@ -1,0 +1,5 @@
+.side-wrap{padding: 15px 10px 0;box-sizing: border-box;}
+.hot-list{margin: 0}
+.hot-list a{text-decoration: none;}
+.hot-list a:hover{text-decoration: underline;}
+.hot-list li{white-space: nowrap;text-overflow:ellipsis;overflow: hidden;line-height: 22px;}

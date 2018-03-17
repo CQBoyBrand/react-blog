@@ -2,7 +2,7 @@
  * Created By brand On 2018/1/23
  */
 import React, {Component} from 'react'
-import {Form, Icon, Row, Col, Input, Button, message} from 'antd';
+import {Form, Row, Col, Input, Button, message} from 'antd';
 
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
@@ -15,11 +15,11 @@ const {TextArea} = Input
     state => state,
     null
 )
-class CommentForm extends React.Component {
+class CommentForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            count: 20,
+            count: 30,
             isClickable: true
         }
     }
@@ -33,7 +33,7 @@ class CommentForm extends React.Component {
                     this.setState({
                         isClickable: true
                     });
-                    count = 20;
+                    count = 30;
                     clearInterval(this.timer);
                 }
                 this.setState({
@@ -66,14 +66,14 @@ class CommentForm extends React.Component {
     }
 
     getNowFormatDatetwo() {
-        var date = new Date();
-        var seperator1 = "-";
-        var seperator2 = ":";
-        var month = date.getMonth() + 1;
-        var strDate = date.getDate();
-        var hours = date.getHours();
-        var minuts = date.getMinutes();
-        var secends = date.getSeconds();
+        let date = new Date();
+        let seperator1 = "-";
+        let seperator2 = ":";
+        let month = date.getMonth() + 1;
+        let strDate = date.getDate();
+        let hours = date.getHours();
+        let minuts = date.getMinutes();
+        let secends = date.getSeconds();
         if (month >= 1 && month <= 9) {
             month = "0" + month;
         }
@@ -89,7 +89,7 @@ class CommentForm extends React.Component {
         if (secends >= 0 && secends <= 9) {
             secends = "0" + secends;
         }
-        var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+        let currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
             + " " + hours + seperator2 + minuts
             + seperator2 + secends;
         return currentdate;
@@ -100,7 +100,12 @@ class CommentForm extends React.Component {
         const userEmail = localStorage.getItem("cq-email") || "";
         const userWebsite = localStorage.getItem("cq-website") || "";
         const {getFieldDecorator} = this.props.form;
-        const artId = this.props.match.params.id;
+        let artId ="";
+        if(this.props.match.path == "/friends"){
+            artId = "friends"
+        }else {
+            artId = this.props.match.params.id
+        }
         const commentTime = this.getNowFormatDatetwo();
         return (
             <Form onSubmit={this.handleSubmit}>
