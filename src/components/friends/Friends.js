@@ -52,7 +52,7 @@ class Friends extends Component {
                                         <Card
                                             hoverable={true}
                                             style={{width: "100%"}}
-                                            cover={<img alt={`${item.linkName}`}
+                                            cover={<img className="UserImage" alt={`${item.linkName}`}
                                                         src={`${item.linkAvatar}`}/>}
                                         >
                                             <Meta

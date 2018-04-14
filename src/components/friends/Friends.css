@@ -44,6 +44,9 @@
 }
 .ant-card-meta-title{font-size: 14px}
 .ant-card-meta-description{font-size: 12px}
+.UserImage{
+    height: 100%;
+}
 @media screen and (max-width: 768px) {
     .friend-links li{
         width: 25%;
